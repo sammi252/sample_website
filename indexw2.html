@@ -11,20 +11,59 @@
       a {
         color: red;
       }
-      .bio-box {
-        border: 1px solid black;
+      .bio-wrapper {
+        overflow: hidden;
+
       }
+      .bio-box {
+        float:left;
+        border-color: black black red black;
+        font-size: 1rem;
+        border: 1px solid black;
+        margin: 3%;
+        width: 24%;
+        padding: 10px;
+      }
+
+
       .bio-box a {
         color: green;
         font-size: 1.em;
       }
-      a.social-link {
-        color: blue;
-        background: lightgray;
-        display:block;
-        height: 36px;
-        width:69px;
+      .bio-box img {
+        width: 100%;
       }
+      .bio-box h3 {
+        margin: -40px 0 1em;
+        text-align: center;
+      }
+      .social-link {
+        color: blue;
+        background: rgba(150, 150, 150, 0.5);
+        border-radius:99px;
+        display: inline-block;
+        font-weight: bold;
+        font-family: helvetica,arial,sans;
+        padding-top: 0.85em;
+        font-size: 1rem;
+        text-align: center;
+        text-decoration: none;
+        line-height: 1;
+        vertical-align: middle;
+        height: 2.5em;
+        width:2.5em;
+      }
+      .soical-list  li {
+        display: inline-block;
+      }
+      .social-list{
+        /*got rid of the block small bullet  list*/
+        list-style: none;
+        padding: 0;
+        text-align: center;
+      }
+
+
       .test-box{
         background: lightblue;
         display: inline-block;
@@ -37,20 +76,21 @@
       .test-box-sizing{
         box-sizing: border-box;
       }
+
     </style>
 
   </head>
   <body>
     <h1>I'm an h1</h1>
-    <ul>
+    <ul class = "social-list" >
       <li>
-        <a href="https://example.com/">Link</a>
+        <a href="https://example.com/" class ="social-link">Link</a>
       </li>
       <li>
-        <a href="https://example.com/">Link</a>
+        <a href="https://example.com/" class = "social-link">Link</a>
       </li>
       <li>
-        <a href="https://example.com/">Link</a>
+        <a href="https://example.com/" class = "social-link">Link</a>
       </li>
     </ul>
     <h2>I'm an h2</h2>
@@ -64,8 +104,9 @@
       <div class="test-box test-box-nosizing test-box-sizing">
           200px wide + border + padding+boxsizing = 200px
       </div>
-
-    <div class="bio-box">
+<div class = "bio-wrapper">
+    <div class="bio-box k">
+      <img src ="http://placekitten.com/g/400/400">
       <h3>Michael Hartl</h3>
       <a href="https://twitter.com/mhartl" class="social-link">here</a>
       <p>
@@ -83,6 +124,7 @@
       </p>
     </div>
     <div class="bio-box">
+      <img src ="http://placekitten.com/g/400/400">
       <h3>Lee Donahoe</h3>
       <a href="https://twitter.com/leedonahoe" class="social-link">here</a>
       <p>
@@ -93,6 +135,7 @@
       </p>
     </div>
     <div class="bio-box">
+      <img src ="http://placekitten.com/g/400/400">
       <h3>Nick Merwin</h3>
       <a href="https://twitter.com/nickmerwin" class="social-link">here</a>
       <p>
@@ -108,5 +151,51 @@
         The Future
       </p>
     </div>
+</div>
+<p  >
+  Learn Enough to Be Dangerous is a leader in the movement to teach the
+  world <em>technical sophistication</em>, which includes both "hard
+  skills" like coding, command lines, and version control, and "soft
+   skills" like guessing keyboard shortcuts, Googling error messages, and
+  knowing when to just reboot the darn thing.
+</p>
+<p>
+  We believe there are <strong>at least a billion people</strong> who can
+  benefit from learning technical sophistication, probably more. To join
+  our movement,
+  <a href="https://learnenough.com/#email_list">sign up for our official
+  email list</a> now.
+</p>
+<h3>Background</h3>
+<p>
+  Learn Enough to Be Dangerous is an outgrowth of the
+  <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> and the
+  <a href="https://www.softcover.io/">Softcover publishing platform</a>.
+  This page is part of the sample site for
+  <a href="https://learnenough.com/css-tutorial"><em>Learn Enough CSS and
+  Layout to Be Dangerous</em></a>, which teaches the basics of
+  <strong>C</strong>ascading <strong>S</strong>tyle
+  <strong>S</strong>heets, the language that allows web pages to be styled.
+  Other related tutorials can be found at
+  <a href="https://learnenough.com/">learnenough.com</a>.
+</p>
+  </body>
+</html>
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title><%= current_page.data.title || "Middleman" %></title>
+    <%= stylesheet_link_tag "site" %>
+    <%= javascript_include_tag "site" %>
+  </head>
+  <body>
+    <p> what is up </p>
+    <%= yield %>
   </body>
 </html>
