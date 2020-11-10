@@ -4,249 +4,477 @@
     <title>Test Page: Don't Panic</title>
     <meta charset="utf-8">
     <style>
-      body {
 
-        font-family: sans-serif;
-        font-size: 1em;
-        padding-left: 20px;
+    body {
 
-      }
+      font-family: sans-serif;
+      font-size: 0.9em;
+      padding-left: 20px;
+      padding-right: 20px;
 
-      h1{
-        display: block;
-        background: black;
-        text-align: center;
-        color: white;
-      }
+    }
 
-      th {
-        padding: 6px;
-        padding-right: 16px;
+
+
+    h1{
+      display: block;
+      width: 1220px;
+      background: black;
+      text-align: center;
+      color: white;
+    }
+
+    th {
+      padding: 6px;
+      padding-right: 16px;
+      padding-left: 30px;
+       display: table-cell;
+       text-align: left;
+    }
+    td {
+      padding: 6px;
         padding-left: 30px;
-         display: table-cell;
-         text-align: left;
-      }
-      td {
-        padding: 6px;
-          padding-left: 30px;
-          padding-right:40px;
-          display: table-cell;
-          text-align: left;
-      }
-      .selectors{
-        display: grid;
-        width: 50%;
-        background: lightyellow;
-        padding-bottom: 40px;
-        float: left;
-      }
-      h2{
-        text-align: center;
-      }
+        padding-right:40px;
+        display: table-cell;
+        text-align: left;
+    }
+    .selectors{
+      display: inline-block;
+      width: 600px;
+      background: lightyellow;
+      padding-left: 10px;
+      padding-bottom: 60px;
+      float:left;
+      position: relative;
+    }
+    h2{
+      text-align: center;
+      text-transform: uppercase;
+    }
 
-      .green{
-        color:green;
-      }
-      .red{
-        color:red;
-      }
-      .events{
-        display: grid;
-        width: 48%;
-        background-color: lightpink;
-        padding-left: 10px;
-        padding-bottom: 30px;
+    .green{
+      color:green;
+    }
+    .red{
+      color:red;
+    }
+    .events{
+      display: inline-block;
+      width: 600px;
+      background-color: lightpink;
+      padding-left: 10px;
+      padding-bottom: 30px;
+      float:left;
+      position: relative;
+    }
+    .list{
+    padding-top: 100px;
+    }
+    .example{
+      display: grid;
+      padding-left: 40px;
+    }
+    .Effects{
+      display: inline-block;
+      width: 600px;
+      background-color: lightblue;
+      padding-left:10px;
 
-      }
-      .list{
-      padding-top: 100px;
-      }
-      .example{
-        display: grid;
-        padding-left: 40px;
-      }
-      .Effects{
-        display: grid;
-        width: 49.3%;
-        background-color: lightblue;
-        padding-left:10px;
-        margin-top: -47px;
-        padding-bottom: 30px;
-        float: left;
-      }
-      .example2{
-        padding-left:30px;
-      }
-      .DOM{
-        display: grid;
-        width: 48%;
-        background-color:lightgreen;
-        padding-left:10px;
-      }
+      float: left;
+      padding-bottom: 120px;
+      position: relative;
+
+    }
+    .example2{
+      padding-left:30px;
+    }
+    .DOM{
+      display: inline-block;
+      width: 600px;
+      background-color:lightgreen;
+      padding-left:10px;
+      float: left;
+      position: relative;
+      padding-bottom: 30px;
+
+
+    }
+    span{
+      display: grid;
+      margin: 8px;
+    }
+    .traversing{
+      display: inline-block;
+      width: 600px;
+      background-color: orange;
+      padding-left: 10px;
+      padding-bottom: 40px;
+      float: left;
+      position: relative;
+    }
+
+
+
+
 
     </style>
 
   </head>
   <body>
 
-<h1>
-  JQuery Cheat Sheet
-</h1>
+    <h1>
+      JQuery Cheat Sheet
+    </h1>
 
-<div class="selectors">
-  <h2>Selectors</h2>
-  <p> Basic syntax is: $(selector).action()</p>
-  <p>$(document).ready(function()  //waits for DOM to complete loading before JQuery.</p>
-    <ul>
-    <li> A $ to define jQuery </li>
-    <li> A (selector) to find HTML element.</li>
-    <li> .action() Action to be performed on the element.</li>
-</ul>
+    <div class="selectors">
+      <h2>Selectors</h2>
+      <p> Basic syntax is: $(selector).action()</p>
+      <p>$(document).ready(function()  //waits for DOM to complete loading before JQuery.</p>
+        <ul>
+        <li> A $ to define jQuery </li>
+        <li> A (selector) to find HTML element.</li>
+        <li> .action() Action to be performed on the element.</li>
+    </ul>
 
-<table>
-    <tr>
-      <th>Syntx</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>$("p").hide()</td>
-      <td>Hides all elements.</td>
-    </tr>
-    <tr>
-      <td>$(".test").hide()</td>
-      <td>Hides all elements with class="test".</td>
-    </tr>
-    <tr>
-      <td>$("#test").hide()</td>
-      <td>Hides all elements with id ="test".</td>
-    </tr>
-    <tr>
-      <td>$("*").hide()</td>
-      <td>Selects all elements.</td>
-    </tr>
-    <tr>
-      <td>$("p.create")</td>
-      <td>Selects all &lt;p&gt; elements with class="create".</td>
-    </tr>
-    <tr>
-      <td>$("[href]")</td>
-      <td>Selects all elements with an href attribute</td>
-    </tr>
-    <tr>
-      <td>$("ul li:first")</td>
-      <td>Selects the first &lt;li&gt; element of the first &lt;ul&gt; </td>
-    </tr>
-    <tr>
-      <td>$(":button")</td>
-      <td>Selects all &lt;button&gt; elements and &lt;input&gt; elements of type="button"&lt;br&gt;</td>
-    </tr>
-    <tr>
-      <td>$("p:second")</td>
-      <td>Selects the second &lt;p &gt;element.</td>
-    </tr>
-    </table>
-</div>
-<div class="events">
-  <h2>Events</h2>
-  <p>An event represents the precise moment when something happens.<br>
-  Examples:</p>
-  <ul>
-    <li>moving a mouse over an element</li>
-    <li>selecting a radio button</li>
-    <li>clicking on an element</li>
-  </ul>
-Inorder to assign a click event to all paragraphs we can use: <br>
+    <table>
+        <tr>
+          <th>Syntx</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>$("p").hide()</td>
+          <td>Hides all elements.</td>
+        </tr>
+        <tr>
+          <td>$(":even")</td>
+          <td>Selects even elements, zero-indexed</td>
+        </tr>
+        <tr>
+          <td>$(".test").hide()</td>
+          <td>Hides all elements with class="test".</td>
+        </tr>
+        <tr>
+          <td>$(":parent")</td>
+          <td>Finds all elements with at least one child node</td>
+        </tr>
+        <tr>
+          <td>$("#test").hide()</td>
+          <td>Hides all elements with id ="test".</td>
+        </tr>
+        <tr>
+          <td>$(":contains('sara')")</td>
+          <td>Selects all divs containing "sara"</td>
+        </tr>
+        <tr>
+          <td>$("*").hide()</td>
+          <td>Selects all elements.</td>
+        </tr>
+        <tr>
+          <td>$("p.create")</td>
+          <td>Selects all &lt;p&gt; elements with class="create".</td>
+        </tr>
+        <tr>
+          <td>$("[href]")</td>
+          <td>Selects all elements with an href attribute</td>
+        </tr>
+        <tr>
+          <td>$(":submit")</td>
+          <td>Selects all elements of type submit</td>
+        </tr>
+        <tr>
+          <td>$(":image")</td>
+          <td>Selects all elementsof type image.</td>
+        </tr>
+      <tr>
+        <td>$(":checkbox")</td>
+        <td>Selects all elements of type checkbox</td>
+      </tr>
+        <tr>
+          <td>$(":text")</td>
+          <td>Selects all input elements of type text.</td>
+        </tr>
+        <tr>
+          <td>$("ul li:first")</td>
+          <td>Selects the first &lt;li&gt; element of the first &lt;ul&gt; </td>
+        </tr>
+        <tr>
+          <td>$(":button")</td>
+          <td>Selects all &lt;button&gt; elements and &lt;input&gt; elements of type="button"&lt;br&gt;</td>
+        </tr>
+        <tr>
+          <td>$("p:second")</td>
+          <td>Selects the second &lt;p &gt;element.</td>
+        </tr>
+        </table>
+        <p>
+      <tr>
+        <td></td>
+        <td>.</td>
+      </tr>
+        </p>
+        <p>.</p>
+    </div>
+    <div class="events">
+      <h2>Events</h2>
+      <p>An event represents the precise moment when something happens.<br>
+      Examples:</p>
+      <ul>
+        <li>moving a mouse over an element</li>
+        <li>selecting a radio button</li>
+        <li>clicking on an element</li>
+      </ul>
+    Inorder to assign a click event to all paragraphs we can use: <br>
 
-<p class="example">$("p").click();</p>
+    <p class="example">$("p").click();</p>
 
-  Inorder to define what happens when an event occurs we use:<br>
-  <p class="example">  $("p").click(function(){ <br>
-        <span class="green">// action goes here!!</span><br>
-        });<br>
-    Other commonly used event methods include:</p>
+      Inorder to define what happens when an event occurs we use:<br>
+      <p class="example">  $("p").click(function(){ <br>
+            <span class="green">// action goes here!!</span><br>
+            });<br>
+        Other commonly used event methods include:</p>
+        <table>
+            <tr>
+              <th>Methods</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>read()</td>
+              <td>Function is executed after DOM is ready</td>
+            </tr>
+            <tr>
+              <td>mousedown()</td>
+              <td>Function is executed when the right left, or middle mouse button is pressed</td>
+            </tr>
+            <tr>
+              <td>mouseenter()</td>
+              <td>Funtion is executed when mouse pointer enters the HTML element</td>
+            </tr>
+            <tr>
+              <td>mouseleave()</td>
+              <td>Function is executed when the mouse pointer leaves the HTML element</td>
+            </tr>
+            <tr>
+              <td>mouseup()</td>
+              <td>Function is executed when left,middlem or right button is released</td>
+            </tr>
+            <tr>
+              <td>keydown()</td>
+              <td>Function is executed when a key is pressed on the keyboar</td>
+            </tr>
+            <tr>
+              <td>ready()</td>
+              <td>Function executes when the DOM is fully loaded</td>
+            </tr>
+            <tr>
+              <td>select()</td>
+              <td>Function is executed when a user makes a text selection</td>
+            </tr>
+            <tr>
+              <td>change()</td>
+              <td>Function is executed when textarea of an element is change</td>
+            </tr>
+              <tr>
+                <td>hover()</td>
+                <td>Function is executed when the mosue enters the HTML element or leave</td>
+              </tr>
+              <tr>
+                <td>on()</td>
+                <td>attach multiple event handlers</td>
+              </tr>
+              </table>
+    </div>
+
+    <div class="Effects">
+
+      <h2>Effects</h2>
+      <p>Adds animation to a web page <br>
+        Example: <br>
+        Toggle method is used to toggle between hiding and showing a selected element.</p>
+        <p class="example">
+      $(document).ready(function(){ <br>
+                <span class = "example2">$("button").click(function(){ <br>
+                    $("p").toggle();     <br>
+                      });     <br></span>
+                    });       <br>
+          </p>
+    Other commonly used animation methods:
     <table>
         <tr>
           <th>Methods</th>
           <th>Description</th>
         </tr>
         <tr>
-          <td>mousedown()</td>
-          <td>Function executed when the right left, or middle mouse button is pressed</td>
+          <td>fadIn()</td>
+          <td>Used to fade in hidden element</td>
         </tr>
         <tr>
-          <td>mouseup()</td>
-          <td>Function executed when left,middlem or right button is released</td>
+          <td>fadeOut()</td>
+          <td>Used to fade out a visisble element</td>
         </tr>
         <tr>
-          <td>ready()</td>
-          <td>Function executes when the DOM is fully loaded</td>
+          <td>fadeToggle()</td>
+          <td>Display or hide the matched elements by animating opacity</td>
+        </tr>
+        <tr>
+          <td>slideDown()</td>
+          <td>Used to slide down an element </td>
           <tr>
-            <td>hover()</td>
-            <td>Function is executed when the mosue enters the HTML element or leave</td>
+            <td>slideUp()</td>
+            <td>Used to slide up an element</td>
           </tr>
           <tr>
-            <td>on()</td>
-            <td>attach multiple event handlers</td>
+            <td>slideToggle()</td>
+            <td>Display or hide the matched elements with a sliding motion</td>
+          </tr>
+          <tr>
+            <td>animate()</td>
+            <td>Moves elements based on property given</td>
+          </tr>
+          <tr>
+            <td>show()</td>
+            <td>Show all matched elements if they are hidden</td>
+          </tr>
+          <tr>
+            <td>delay()</td>
+            <td>Set a timer to delay execution of subsequent items in queue</td>
+          </tr>
+          <tr>
+            <td>finish()</td>
+            <td>Stop the currenlty running animation, remove all  queued animation and complete all animations</td>
+          </tr>
+          <tr>
+            <td>stop()</td>
+            <td>Stops all the currenlty running animations on all the specified elements</td>
           </tr>
           </table>
-</div>
+    </div>
+    <div class="DOM">
+      <h2> DOM manipulation </h2>
+      <p> Three useful jQuery methods for DOM manipulation are: <br>
+        <ul>
+        <li>  text() - Sets or returns the text content of selected elements</li>
+        <li>  html() - Sets or returns the content of selected elements (including HTML markup)</li>
+        <li>  val() - Sets or returns the value of form fields</li>
+    </p>
+    Example:<br>
+    let's say we have an element on my an HTML file with Id name 'check': <br>
+    &lt;p id = "check"&gt; I'm a text &lt;/&gt; <br>
 
-<div class="Effects">
-
-  <h2>Effects</h2>
-  <p>Adds animation to a web page <br>
-    Example: <br>
-    Toggle method is used to toggle between hiding and showing a selected element.</p>
     <p class="example">
-  $(document).ready(function(){ <br>
-            <span class = "example2">$("button").click(function(){ <br>
-                $("p").toggle();     <br>
-                  });     <br></span>
-                });       <br>
+     <span> $("#check").text();  // will grap 'I'm a text' from p element.<br></span>
+      <span>$("#check").text("we here"); // will replace 'I'm a text' with 'we here';<br></span>
+      <span>$("#check").html("&lt;b &gt; Hello world &lt;b&gt;")  // will replace the html tag  with a bold Hello world;<br></span>
+
+    </p>
+    Other Commonly used DOM manipulation methods:
+
+    <table>
+        <tr>
+          <th>Methods</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>append()</td>
+          <td>Insert contents at the end of a selected elements</td>
+        </tr>
+        <tr>
+          <td>prepend</td>
+          <td>Inserts content athe the begining of the selected elements</td>
+        </tr>
+        <tr>
+          <td>after()</td>
+          <td>Inserts content after the selected element </td>
+          <tr>
+            <td>before()()</td>
+            <td>Inserts content before the selected elements</td>
+          </tr>
+          <tr>
+            <td>remove()</td>
+            <td>Removes selected element</td>
+          </tr>
+          <tr>
+            <td>empty()</td>
+            <td>Removes all child elements from selected element</td>
+          </tr>
+          <tr>
+            <td>addClass()</td>
+            <td>AddClass to the selected elements</td>
+          </tr>
+          <tr>
+            <td>removeClass()</td>
+            <td>Removes one or more class from the selected elements</td>
+          </tr>
+          <tr>
+            <td>replaceWith()</td>
+            <td>Replaces a selected element with given value</td>
+          </tr>
+          <tr>
+            <td>innerWidth()</td>
+            <td>Returns width of an element</td>
+          </tr>
+          <tr>
+            <td>innerHeight()</td>
+            <td>Returns height of an element</td>
+          </tr>
+          </table>
+    </div>
+    <div class="traversing">
+      <h2>Traversing</h2>
+      <p>Traversing means searching or moving through. They are used to select elements based
+      on their relation with other elements.</p>
+      Example: <br>
+      The following query returns the direct parent of the &lt;ul &gt; element:
+      <p class="example">
+        $("ul").parent();
       </p>
-Other commonly used animation methods:
-<table>
-    <tr>
-      <th>Methods</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>fadIn()</td>
-      <td>Used to fade in hidden element</td>
-    </tr>
-    <tr>
-      <td>fadeOut()</td>
-      <td>Used to fade out a visisble element</td>
-    </tr>
-    <tr>
-      <td>slideDown()</td>
-      <td>Used to slide down an element </td>
-      <tr>
-        <td>slideUp()</td>
-        <td>Used to slide up an element</td>
-      </tr>
-      <tr>
-        <td>animate()</td>
-        <td>Moves elements based on property given</td>
-      </tr>
-      <tr>
-        <td>show()</td>
-        <td>Show all matched elements if they are hidden</td>
-      </tr>
-      <tr>
-        <td>stop()</td>
-        <td>Stops all the currenlty running animations on all the specified elements</td>
-      </tr>
-      </table>
-</div>
-<div class="DOM">
-  <h2> DOM manipulation </h2>
-  <p> Three useful jQuery methods for DOM manipulation are: <br>
-    <ul>
-    <li>  text() - Sets or returns the text content of selected elements</li>
-    <li>  html() - Sets or returns the content of selected elements (including HTML markup)</li>
-    <li>  val() - Sets or returns the value of form fields</li>
-</p>
-</div>
+      Other commonly used traversing methods: <br>
+      <table>
+          <tr>
+            <th>Methods</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>eq(index)</td>
+            <td>Reduce the set of matched elements to the one at the specified inde</td>
+          </tr>
+          <tr>
+            <td>filter(function/selctor/elements)</td>
+            <td>Reduce the set of matched elementsto those that match the selector or pass the function test</td>
+          </tr>
+          <tr>
+            <td>has(selector)</td>
+            <td>Reduce the set of matched elements to those that have a descendant that matches the selector</td>
+          </tr>
+          <tr>
+            <td>map(callback)</td>
+            <td>Pass each element in the current matched set through a function, producing new jQuery object containing the return values</td>
+          </tr>
+          <tr>
+            <td>last()</td>
+            <td>Reduce the set of matched elements to the final one in the set</td>
+          </tr>
+          <tr>
+            <td>children([selector])</td>
+            <td>get the children of each elemnt in the set of matched elements</td>
+          </tr>
+          <tr>
+            <td>next([selector])</td>
+            <td>Get the immediately following sibling of each element in the set of matched elements.</td>
+          </tr>
+          <tr>
+            <td>prev([selector])</td>
+            <td>Get the immediately preceding sibling of each element in the set of matched elements.</td>
+          </tr>
+          <tr>
+            <td>nextAll([selector])</td>
+            <td>Get all following siblingof each element in the set of matched elements.</td>
+          </tr>
+          <tr>
+            <td>siblings([selector])</td>
+            <td>Get the siblingsof each element in the set of matched elements.</td>
+          </tr>
+
+    </div>
+
 </body>
 </html>
